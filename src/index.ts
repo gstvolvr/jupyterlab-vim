@@ -81,6 +81,8 @@ class VimCell {
                 commands.execute('notebook:enter-command-mode');
             });
 
+          	lvim.map('jj', '<Esc>', 'insert');
+
             (CodeMirror as any).Vim.handleKey(editor.editor, '<Esc>');
             lvim.defineMotion('moveByLinesOrCell', (cm: any, head: any, motionArgs: any, vim: any) => {
                 let cur = head;
